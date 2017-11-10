@@ -2,19 +2,21 @@ body{
   background-image: url(/Users/hectorguevara/Desktop/dev/Skeleton-Hunt/images/hospital-background-1953.png);
   background-size: cover;
   background-repeat: no-repeat;
-  border: 1px solid gold;
+  border: 3px solid red;
   position: fixed;
   z-index: 0;
+  height: 100%;
+  width: 100%;
 }
 
-
+/*
 .container{
     border: 1px solid gold;
     position: fixed;
     display: flex;
     flex-wrap: wrap;
-}
-.buttons{
+}*/
+/*.buttons{
   background-color: red;
   color: white;
   margin: 75px auto 0 450px;
@@ -22,7 +24,7 @@ body{
 }
 .boxes{
   display: inline-block;
-}
+}*/
 
 /*************************
 * General
@@ -31,11 +33,11 @@ body{
 
 
 .gameboard {
-  width: 90%;
-  margin:auto;
+  position: relative;
   border: 1px solid gold;
-  margin-top: 4.5em;
-  /*margin-bottom: 5em;*/
+  height:75%;
+  width: 65%;
+  margin: 0 20px;
 }
 
 .skull2{
@@ -70,11 +72,6 @@ body{
   width: 81px;
   height: 41px;
 }
-.leftarm2{
-  display: inline-block;
-  width: 33px;
-  height: 66px;
-}
 
 
 /*===================Animation===========================*/
@@ -87,9 +84,7 @@ body{
   animation-duration: 10s;
   animation-iteration-count: infinite;
 }
-*{
-  border: 3px solid pink;
-}
+
 .torso{
   background: black;
   position: relative;
@@ -108,7 +103,7 @@ body{
 .rightarm{
   background: black;
   position: relative;
-  animation-name: ping;
+  animation-name: fav;
   animation-duration: 10s;
   animation-iteration-count: infinite;
 }
@@ -116,14 +111,14 @@ body{
 .leftleg{
   background: black;
   position: relative;
-  animation-name: ping;
+  animation-name: rodeo;
   animation-duration: 10s;
   animation-iteration-count: infinite;
 }
 .rightleg{
   background: black;
   position: relative;
-  animation-name: ping;
+  animation-name: kicker;
   animation-duration: 10s;
   animation-iteration-count: infinite;
 }
@@ -157,15 +152,54 @@ body{
   100% {background: ghostwhite; left:0px; top:0px; }
 }
 @keyframes slide {
+  0% {background: green; right:100%; bottom: 100px}
+  10% {background: green; }
+  25% {background: green; left: 0%; top:75px;}
+  30% {background: green;}
+  40% {background: green;}
+  50% {background: green; left: 75%; top: 10%; }
+  60% {background: green; }
+  75% {background: green; left:0%; top:10em;}
+  80% {background: green;}
+  90% {background: green; }
+  100% {background: green; left:0px; top:0px; }
+}
+@keyframes fav {
+  0% {background: yellow; right:100%; bottom: 100px}
+  10% {background: yellow; }
+  25% {background: yellow; left: 0%; top:75px;}
+  30% {background: yellow;}
+  40% {background: yellow;}
+  50% {background: yellow; left: 75%; top: 10em; }
+  60% {background: yellow; }
+  75% {background: yellow; left:0%; top:10em;}
+  80% {background: yellow;}
+  90% {background: yellow; }
+  100% {background: yellow; left:0px; top:0px; }
+}
+@keyframes rodeo {
   0% {background: none; right:100%; bottom: 100px}
-  10% {background: none; }
-  25% {background: none; left: 0%; top:75px;}
-  30% {background: none;}
-  40% {background: none;}
-  50% {background: none; left: 75%; top: 10em; }
-  60% {background: none; }
-  75% {background: none; left:0%; top:10em;}
-  80% {background: none;}
-  90% {background: none; }
-  100% {background: none; left:0px; top:0px; }
+  10% {background: blue; }
+  25% {background: blue; left: 0%; top:75px;}
+  30% {background: blue;}
+  40% {background: blue;}
+  50% {background: blue; left: 75%; top: 10em; }
+  60% {background: blue; }
+  75% {background: blue; left:0%; top:10em;}
+  80% {background: blue;}
+  90% {background: blue; }
+  100% {background: blue; left:0px; top:0px; }
+}
+@keyframes kicker {
+  0% {background: orange; right:100%; bottom: 100px}
+  10% {background: orange; }
+  25% {background: orange; left: 0%; top:75px;}
+  30% {background: orange;}
+  40% {background: orange;}
+  50% {background: orange; left: 75%; top: 10em; }
+  60% {background: orange; }
+  75% {background: orange; left:0%; top:10em;}
+  80% {background: orange;}
+  90% {background: orange; }
+  100% {background: orange; left:0px; top:0px; }
 }
