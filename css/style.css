@@ -1,30 +1,35 @@
+html, body{
+  height: 100%;
+  width: 100%;
+}
 body{
   background-image: url(/Users/hectorguevara/Desktop/dev/Skeleton-Hunt/images/hospital-background-1953.png);
   background-size: cover;
   background-repeat: no-repeat;
   border: 3px solid red;
-  position: fixed;
+  /*position: fixed;*/
   z-index: 0;
-  height: 100%;
-  width: 100%;
+  overflow: hidden;
 }
 
-/*
 .container{
     border: 1px solid gold;
-    position: fixed;
+    position: relative;
     display: flex;
     flex-wrap: wrap;
-}*/
-/*.buttons{
+}
+.buttons{
   background-color: red;
   color: white;
-  margin: 75px auto 0 450px;
+  bottom: 0;
+  right: 50%;
   font-size: 30px;
+  display: inline;
+  position: absolute;
 }
 .boxes{
-  display: inline-block;
-}*/
+  display:block;
+}
 
 /*************************
 * General
@@ -33,11 +38,13 @@ body{
 
 
 .gameboard {
+  background-color: white;
   position: relative;
   border: 1px solid gold;
   height:75%;
   width: 65%;
-  margin: 0 20px;
+  margin: 30px 20px;
+  overflow: hidden;
 }
 
 .skull2{
