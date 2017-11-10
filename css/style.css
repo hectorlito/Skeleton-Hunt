@@ -1,0 +1,171 @@
+body{
+  background-image: url(/Users/hectorguevara/Desktop/dev/Skeleton-Hunt/images/hospital-background-1953.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  border: 1px solid gold;
+  position: fixed;
+  z-index: 0;
+}
+
+
+.container{
+    border: 1px solid gold;
+    position: fixed;
+    display: flex;
+    flex-wrap: wrap;
+}
+.buttons{
+  background-color: red;
+  color: white;
+  margin: 75px auto 0 450px;
+  font-size: 30px;
+}
+.boxes{
+  display: inline-block;
+}
+
+/*************************
+* General
+*************************/
+
+
+
+.gameboard {
+  width: 90%;
+  margin:auto;
+  border: 1px solid gold;
+  margin-top: 4.5em;
+  /*margin-bottom: 5em;*/
+}
+
+.skull2{
+  display: inline-block;
+  width: 100px;
+  height: 100px;
+}
+
+.torso2{
+  display: inline-block;
+  width: 50px;
+  height: 50px;
+}
+
+.leftarm2{
+  display: inline-block;
+  width: 70px;
+  height: 80px;
+}
+.rightarm2{
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+}
+.leftleg2{
+  display: inline-block;
+  width: 72px;
+  height: 20px;
+}
+.rightleg2{
+  display: inline-block;
+  width: 81px;
+  height: 41px;
+}
+.leftarm2{
+  display: inline-block;
+  width: 33px;
+  height: 66px;
+}
+
+
+/*===================Animation===========================*/
+
+
+.skull{
+  background: black;
+  position: relative;
+  animation-name: box-step;
+  animation-duration: 10s;
+  animation-iteration-count: infinite;
+}
+*{
+  border: 3px solid pink;
+}
+.torso{
+  background: black;
+  position: relative;
+  animation-name: slide;
+  animation-duration: 10s;
+  animation-iteration-count: infinite;
+}
+
+.leftarm{
+  background: black;
+  position: relative;
+  animation-name: ping;
+  animation-duration: 10s;
+  animation-iteration-count: infinite;
+}
+.rightarm{
+  background: black;
+  position: relative;
+  animation-name: ping;
+  animation-duration: 10s;
+  animation-iteration-count: infinite;
+}
+
+.leftleg{
+  background: black;
+  position: relative;
+  animation-name: ping;
+  animation-duration: 10s;
+  animation-iteration-count: infinite;
+}
+.rightleg{
+  background: black;
+  position: relative;
+  animation-name: ping;
+  animation-duration: 10s;
+  animation-iteration-count: infinite;
+}
+
+/*colors and movement*/
+@keyframes box-step {
+  0% {background: black; left:0%; top:0%;}
+  10% {background: black; }
+  25% {background: black; left: 75%; top:0px;}
+  30% {background:black;}
+  40% {background: lightyellow;}
+  50% {background: palegreen; left: 75%; top: 10em; }
+  60% {background: mediumaquamarine; }
+  75% {background: steelblue; left:0%; top:10em;}
+  80% {background: darkviolet;}
+  90% {background: black; }
+  100% {background: ghostwhite; left:0px; top:0px; }
+}
+
+@keyframes ping {
+  0% {background: black; right:100%; bottom: 25px}
+  10% {background: crimson; }
+  25% {background: hotpink; right: 100%; bottom:0px;}
+  30% {background: coral;}
+  40% {background: lightyellow;}
+  50% {background: palegreen; left: 0%; top: 10em; }
+  60% {background: mediumaquamarine; }
+  75% {background: steelblue; left:75%; top:100em;}
+  80% {background: darkviolet;}
+  90% {background: black; }
+  100% {background: ghostwhite; left:0px; top:0px; }
+}
+@keyframes slide {
+  0% {background: none; right:100%; bottom: 100px}
+  10% {background: none; }
+  25% {background: none; left: 0%; top:75px;}
+  30% {background: none;}
+  40% {background: none;}
+  50% {background: none; left: 75%; top: 10em; }
+  60% {background: none; }
+  75% {background: none; left:0%; top:10em;}
+  80% {background: none;}
+  90% {background: none; }
+  100% {background: none; left:0px; top:0px; }
+}
