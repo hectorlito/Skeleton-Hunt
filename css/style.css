@@ -3,24 +3,49 @@ html, body{
   width: 100%;
 }
 body{
-  background-image: url(/Users/hectorguevara/Desktop/dev/Skeleton-Hunt/images/hospital-background-1953.png);
+  /*background-image: url(/Users/hectorguevara/Desktop/dev/Skeleton-Hunt/images/hospital-background-1953.png);*/
+  background-color: black;
   background-size: cover;
   background-repeat: no-repeat;
   border: 3px solid red;
-  /*position: fixed;*/
   z-index: 0;
   overflow: hidden;
 }
+h1{
+  text-align: center;
+}
 
+.player1{
+  color: white;
+}
+.titulo{
+  background-color: black;
+  color:red;
+  text-align: center;
+}
+.skeleton-board-container{
+  display:flex;
+  height: 85%;
+  width: 100%;
+}
 .container{
     border: 1px solid gold;
     position: relative;
     display: flex;
     flex-wrap: wrap;
 }
+.skeleton{
+  background-color: black;
+  border: 10px solid red;
+  position: relative;
+  display: inline-block;
+  height: 40%;
+  width: 15%;
+  margin: 300px 20px 130px 150px;
+}
 .buttons{
   background-color: red;
-  color: white;
+  color: black;
   bottom: 0;
   right: 50%;
   font-size: 30px;
@@ -43,7 +68,7 @@ body{
   border: 1px solid gold;
   height:75%;
   width: 65%;
-  margin: 30px 20px;
+  margin: 120px 20px;
   overflow: hidden;
 }
 

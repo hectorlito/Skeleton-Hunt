@@ -7,32 +7,43 @@
   src="https://code.jquery.com/jquery-3.2.1.min.js"
   integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
   crossorigin="anonymous"></script>
-  <link rel="stylesheet" href="css/style.css">
-  <script src="javascript/app.js"></script>
+  <link rel="stylesheet" href="css/style.css" type="">
+  <script src="javascript/app.js" type=""></script>
 </head>
 <body>
-
-<div class="gameboard">
-  <!-- all of the components flying around the game board -->
-  <div class="skull skull2"></div>
-  <div class="torso torso2">
-    <img class="torso2" src="/Users/hectorguevara/Desktop/dev/Skeleton-Hunt/images/blue doc.jpg">
-    <!-- gave this image a size by setting class equal to wrapper class. and overwriting default image size -->
+  <h1><span class="titulo">SKELETON HUNT</span></h1>
+  <div class="skeleton-board-container">
+    <div class="gameboard">
+      <!-- all of the components flying around the game board -->
+      <div class="skull skull2"></div>
+      <div class="torso torso2">
+        <img class="torso2" src="/Users/hectorguevara/Desktop/dev/Skeleton-Hunt/images/blue doc.jpg" alt=""/>
+        <!-- gave this image a size by setting class equal to wrapper class. and overwriting default image size -->
+      </div>
+      <div class="leftarm leftarm2"></div>
+      <div class="rightarm rightarm2"></div>
+      <div class="leftleg leftleg2"></div>
+      <div class="rightleg rightleg2"></div>
+    </div>
+    <!-- completed skeleton is below -->
+    <div class="skeleton"></div>
   </div>
-  <div class="leftarm leftarm2"></div>
-  <div class="rightarm rightarm2"></div>
-  <div class="leftleg leftleg2"></div>
-  <div class="rightleg rightleg2"></div>
-
-</div>
-<div class="container">
-  <div class="boxes">
-      <input class="boxes" type="text" name="name">gamer name</input>
-      <input class="boxes" type="text" name="name">gamer name</input>
+  <!-- buttons at bottom -->
+  <div class="container">
+    <div class="boxes">
+      <div class="player1">
+        <h4 > player</h4>
+      </div>
+      <form>
+        <input id="player1sub" class="boxes" type="text" name="name" value=""/>
+        <input type="submit">SUBMIT</button>
+        <input id="player1sub" class="boxes" type="text" name="name" value=""/>
+        <input type="submit">SUBMIT</button>
+      </form>
+    </div>
+    <div class="startbutton">
+      <button class="buttons" type="button">Start!</button>
+    </div>
   </div>
-  <div class="startbutton">
-    <button class="buttons" type="button">Start!</button>
-  </div>
-</div>
 </body>
 </html>
