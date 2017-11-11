@@ -1,21 +1,26 @@
 html, body{
-  height: 100%;
+  height: 99%;
   width: 100%;
 }
 body{
-  /*background-image: url(/Users/hectorguevara/Desktop/dev/Skeleton-Hunt/images/hospital-background-1953.png);*/
   background-color: black;
   background-size: cover;
   background-repeat: no-repeat;
   border: 3px solid red;
   z-index: 0;
-  overflow: hidden;
+  /*overflow: hidden;*/
 }
 h1{
   text-align: center;
 }
+h4{
+  display:inline-block;
+}
 
 .player1{
+  color: white;
+}
+.player2{
   color: white;
 }
 .titulo{
@@ -25,14 +30,19 @@ h1{
 }
 .skeleton-board-container{
   display:flex;
-  height: 85%;
+  height: 70%;
   width: 100%;
+    /*border: 10px solid pink;*/
 }
 .container{
     border: 1px solid gold;
     position: relative;
     display: flex;
     flex-wrap: wrap;
+}
+.player-names{
+  height:15%;
+  width: 100%;
 }
 .skeleton{
   background-color: black;
@@ -66,9 +76,9 @@ h1{
   background-color: white;
   position: relative;
   border: 1px solid gold;
-  height:75%;
+  height:65%;
   width: 65%;
-  margin: 120px 20px;
+  margin: 100px 20px;
   overflow: hidden;
 }
 
@@ -171,46 +181,46 @@ h1{
 }
 
 @keyframes ping {
-  0% {background: black; right:100%; bottom: 25px}
-  10% {background: crimson; }
-  25% {background: hotpink; right: 100%; bottom:0px;}
-  30% {background: coral;}
-  40% {background: lightyellow;}
-  50% {background: palegreen; left: 0%; top: 10em; }
-  60% {background: mediumaquamarine; }
-  75% {background: steelblue; left:75%; top:100em;}
-  80% {background: darkviolet;}
-  90% {background: black; }
-  100% {background: ghostwhite; left:0px; top:0px; }
+  0% {background: red; left:0%; bottom: 0%;}
+  10% {background: red; }
+  25% {background: red; left: 55%; bottom:0%;}
+  30% {background: red;}
+  40% {background: red;}
+  50% {background: red; left: 0%; bottom: 10%; }
+  60% {background: red; }
+  75% {background: red;left:75%; top:10%;}
+  80% {background: red;}
+  90% {background: red; }
+  100% {background: red; left:0%; bottom:0%; }
 }
 @keyframes slide {
-  0% {background: green; right:100%; bottom: 100px}
+  0% {background: green; right:0%; bottom: 100px}
   10% {background: green; }
   25% {background: green; left: 0%; top:75px;}
   30% {background: green;}
   40% {background: green;}
   50% {background: green; left: 75%; top: 10%; }
   60% {background: green; }
-  75% {background: green; left:0%; top:10em;}
+  75% {background: green; left:10%; top:20em;}
   80% {background: green;}
   90% {background: green; }
   100% {background: green; left:0px; top:0px; }
 }
 @keyframes fav {
-  0% {background: yellow; right:100%; bottom: 100px}
+  0% {background: yellow; right:0%; bottom: 0;}
   10% {background: yellow; }
-  25% {background: yellow; left: 0%; top:75px;}
+  25% {background: yellow; right: 75%; bottom:0px;}
   30% {background: yellow;}
   40% {background: yellow;}
-  50% {background: yellow; left: 75%; top: 10em; }
+  50% {background: yellow; right: 45%; bottom: 5em; }
   60% {background: yellow; }
-  75% {background: yellow; left:0%; top:10em;}
+  75% {background: yellow; right:0%; bottom:15em;}
   80% {background: yellow;}
   90% {background: yellow; }
   100% {background: yellow; left:0px; top:0px; }
 }
 @keyframes rodeo {
-  0% {background: none; right:100%; bottom: 100px}
+  0% {background: none; left:0%; top: 0px}
   10% {background: blue; }
   25% {background: blue; left: 0%; top:75px;}
   30% {background: blue;}

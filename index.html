@@ -9,36 +9,50 @@
   crossorigin="anonymous"></script>
   <link rel="stylesheet" href="css/style.css" type="">
   <script src="javascript/app.js" type=""></script>
+  <link href="https://fonts.googleapis.com/css?family=Suravaram" rel="stylesheet">
 </head>
 <body>
   <h1><span class="titulo">SKELETON HUNT</span></h1>
   <div class="skeleton-board-container">
     <div class="gameboard">
       <!-- all of the components flying around the game board -->
-      <div class="skull skull2"></div>
+      <div class="skull skull2"><img class="skull2" src="/Users/hectorguevara/Desktop/dev/Skeleton-Hunt/images/skull.png"/></div>
       <div class="torso torso2">
-        <img class="torso2" src="/Users/hectorguevara/Desktop/dev/Skeleton-Hunt/images/blue doc.jpg" alt=""/>
+        <img class="torso2" src="/Users/hectorguevara/Desktop/dev/Skeleton-Hunt/images/torso.png" alt="torso"/>
         <!-- gave this image a size by setting class equal to wrapper class. and overwriting default image size -->
       </div>
-      <div class="leftarm leftarm2"></div>
-      <div class="rightarm rightarm2"></div>
-      <div class="leftleg leftleg2"></div>
-      <div class="rightleg rightleg2"></div>
+      <div class="leftarm leftarm2">
+        <img class="leftarm2" src="/Users/hectorguevara/Desktop/dev/Skeleton-Hunt/images/leftarm.png" alt="leftarm"/>
+      </div>
+      <div class="rightarm rightarm2">
+        <img class="rightarm2" src="/Users/hectorguevara/Desktop/dev/Skeleton-Hunt/images/rightarm.png" alt="rightarm"/></div>
+      <div class="leftleg leftleg2">
+        <img class="leftleg2" src="/Users/hectorguevara/Desktop/dev/Skeleton-Hunt/images/leftleg.png" alt="leftleg"/></div>
+      <div class="rightleg rightleg2">
+        <img class="rightleg" src="/Users/hectorguevara/Desktop/dev/Skeleton-Hunt/images/rightleg.png" alt="rightleg"/></div>
     </div>
     <!-- completed skeleton is below -->
     <div class="skeleton"></div>
   </div>
+  <!-- PLayer names location -->
+  <div class="player-names">
+    <div class="player1">
+      <h4>PLAYER 1</h4>
+    </div>
+    <div class="player2">
+      <h4>PLAYER 2</h4>
+    </div>
+  </div>
   <!-- buttons at bottom -->
   <div class="container">
     <div class="boxes">
-      <div class="player1">
-        <h4 > player</h4>
-      </div>
-      <form>
+      <form class="player1form">
         <input id="player1sub" class="boxes" type="text" name="name" value=""/>
-        <input type="submit">SUBMIT</button>
-        <input id="player1sub" class="boxes" type="text" name="name" value=""/>
-        <input type="submit">SUBMIT</button>
+        <input type="submit"></button>
+      </form>
+      <form class="player2form">
+        <input id="player2sub" class="boxes" type="text" name="name" value=""/>
+        <input type="submit"></button>
       </form>
     </div>
     <div class="startbutton">
