@@ -28,36 +28,75 @@ $(() => {
         $($torso).removeClass("clickable");
       };
 
+      const addleftarm = () => {
+        const $leftarmfound = $('<img>').attr("src", "/Users/hectorguevara/Desktop/dev/Skeleton-Hunt/images/leftarm.png")
+        $(".skeleton").append($leftarmfound);
+        $($leftarm).removeClass("clickable");
+      };
 
+      const addrightarm = () => {
+        const $rightarmfound = $('<img>').attr("src", "/Users/hectorguevara/Desktop/dev/Skeleton-Hunt/images/rightarm.png")
+        $(".skeleton").append($rightarmfound);
+        $($rightarm).removeClass("clickable");
+      };
+
+      const addleftleg = () => {
+        const $leftlegfound = $('<img>').attr("src", "/Users/hectorguevara/Desktop/dev/Skeleton-Hunt/images/leftleg.png")
+        $(".skeleton").append($leftlegfound);
+        $($leftleg).removeClass("clickable");
+      };
+
+      const addrightleg = () => {
+        const $rightlegfound = $('<img>').attr("src", "/Users/hectorguevara/Desktop/dev/Skeleton-Hunt/images/rightleg.png")
+        $(".skeleton").append($rightlegfound);
+        $($rightleg).removeClass("clickable");
+      };
+
+//===========clicks============================//
 
     $skull.on('click', () => {
       if ($($skull).hasClass("clickable")){
       console.log("skull was clicked", );
         addskull();
-      }
+        }
+      });
 
-    });
     $torso.on('click', () => {
       if ($($torso).hasClass("clickable")){
         addtorso();
-      }
-    });
+        }
+      });
+
     $leftarm.on('click', () => {
-      console.log("leftarm was clicked", );
-      addToSkeleton();
-    });
+        if ($($leftarm).hasClass("clickable")){
+      console.log("left arm was clicked", );
+      addleftarm();
+    }
+      });
+
     $rightarm.on('click', () => {
-      console.log("rightarm was clicked", );
-      addToSkeleton();
-    });
+        if ($($rightarm).hasClass("clickable")){
+      console.log("right arm was clicked", );
+      addrightarm();
+      }
+      });
+
     $leftleg.on('click', () => {
+      if ($($leftleg).hasClass("clickable")){
       console.log("leftlegwas clicked", );
-      addToSkeleton();
-    });
+      addleftleg();
+      }
+      });
+
     $rightleg.on('click', () => {
+      if ($($rightleg).hasClass("clickable")){
       console.log("rightleg was clicked", );
-      addToSkeleton();
-    });
+      addrightleg();
+      }
+      });
+
+
+
     //=================PLAYER NAMES====================//
     let player1sub = $('<h3>');
     let player2sub = $('<h3>');
