@@ -10,46 +10,135 @@ $(() => {
   const $rightleg = $('.rightleg2');
   const $startbutton = $('.startbutton');
   const $fullSkeleton = $('.skeleton');
+  const game = {
+    player1time: '',
+    player2time: '',
+    skeletonbox: 0
+  }
   //startgame function
   const startgame= () => {
     $startbutton.on('click', () => {
-      console.log('start button was clicked');
+      $skull.addClass('skull');
+      $torso.addClass('torso');
+      $leftarm.addClass('leftarm');
+      $rightarm.addClass('rightarm');
+      $rightleg.addClass('rightleg');
+      $leftleg.addClass('leftleg');
+      const time = new Date()
+      console.log(time);
+      console.log(game);
+      //start player one round
     })
+
+    const endPlayer1Round= () => {
+        $skull.removeClass('skull');
+        $torso.removeClass('torso');
+        $leftarm.removeClass('leftarm');
+        $rightarm.removeClass('rightarm');
+        $rightleg.removeClass('rightleg');
+        $leftleg.removeClass('leftleg');
+        const time = new Date();
+        player2round();
+        resetround();
+    }
+
+    const player2round= () => {
+      $startbutton.on('click', () => {
+        $skull.addClass('skull').addClass('clickable');
+        $torso.addClass('torso').addClass('clickable');
+        $leftarm.addClass('leftarm').addClass('clickable');
+        $rightarm.addClass('rightarm').addClass('clickable');
+        $rightleg.addClass('rightleg').addClass('clickable');
+        $leftleg.addClass('leftleg').addClass('clickable');
+        const time = new Date();
+      })
+    }
+
+    const endPlayer2Round = () => {
+      $skull.removeClass('skull');
+      $torso.removeClass('torso');
+      $leftarm.removeClass('leftarm');
+      $rightarm.removeClass('rightarm');
+      $rightleg.removeClass('rightleg');
+      $leftleg.removeClass('leftleg');
+      const time = new Date();
+    }
+
+    const resetround= () => {
+      $('.skeleton').empty();
+      game.skeletonbox = 0;
+    }
 //============ADD AFTER CLICK==========================//
     const addskull = () => {
-      const $skullfound = $('<img>').attr("src", "/Users/hectorguevara/Desktop/dev/Skeleton-Hunt/images/skull.png")
+      const $skullfound = $('<img>').addClass("skull2").attr("src", "/Users/hectorguevara/Desktop/dev/Skeleton-Hunt/images/skull.png")
         $(".skeleton").append($skullfound);
-        $($skull).removeClass("clickable")
+        $($skull).removeClass("clickable");
+        game.skeletonbox +=1;
+        if(game.skeletonbox === 6){
+          endPlayer1Round();
+          endPlayer2Round();
+        }
+        console.log(game);
       }
 
       const addtorso = () => {
-        const $torsofound = $('<img>').attr("src", "/Users/hectorguevara/Desktop/dev/Skeleton-Hunt/images/torso.png")
+        const $torsofound = $('<img>').addClass("torso2").attr("src", "/Users/hectorguevara/Desktop/dev/Skeleton-Hunt/images/torso.png")
         $(".skeleton").append($torsofound);
         $($torso).removeClass("clickable");
+        game.skeletonbox +=1;
+        if(game.skeletonbox === 6){
+          endPlayer1Round();
+          endPlayer2Round();
+        }
+        console.log(game);
       };
 
       const addleftarm = () => {
-        const $leftarmfound = $('<img>').attr("src", "/Users/hectorguevara/Desktop/dev/Skeleton-Hunt/images/leftarm.png")
+        const $leftarmfound = $('<img>').addClass("leftarm2").attr("src", "/Users/hectorguevara/Desktop/dev/Skeleton-Hunt/images/leftarm.png")
         $(".skeleton").append($leftarmfound);
         $($leftarm).removeClass("clickable");
+        game.skeletonbox +=1;
+        if(game.skeletonbox === 6){
+          endPlayer1Round();
+          endPlayer2Round();
+        }
+        console.log(game);
       };
 
       const addrightarm = () => {
-        const $rightarmfound = $('<img>').attr("src", "/Users/hectorguevara/Desktop/dev/Skeleton-Hunt/images/rightarm.png")
+        const $rightarmfound = $('<img>').addClass("rightarm2").attr("src", "/Users/hectorguevara/Desktop/dev/Skeleton-Hunt/images/rightarm.png")
         $(".skeleton").append($rightarmfound);
         $($rightarm).removeClass("clickable");
+        game.skeletonbox +=1;
+        if(game.skeletonbox === 6){
+          endPlayer1Round();
+          endPlayer2Round();
+        }
+        console.log(game);
       };
 
       const addleftleg = () => {
-        const $leftlegfound = $('<img>').attr("src", "/Users/hectorguevara/Desktop/dev/Skeleton-Hunt/images/leftleg.png")
+        const $leftlegfound = $('<img>').addClass("leftleg2").attr("src", "/Users/hectorguevara/Desktop/dev/Skeleton-Hunt/images/leftleg.png")
         $(".skeleton").append($leftlegfound);
         $($leftleg).removeClass("clickable");
+        game.skeletonbox +=1;
+        if(game.skeletonbox === 6){
+          endPlayer1Round();
+          endPlayer2Round();
+        }
+        console.log(game);
       };
 
       const addrightleg = () => {
-        const $rightlegfound = $('<img>').attr("src", "/Users/hectorguevara/Desktop/dev/Skeleton-Hunt/images/rightleg.png")
+        const $rightlegfound = $('<img>').addClass("rightleg2").attr("src", "/Users/hectorguevara/Desktop/dev/Skeleton-Hunt/images/rightleg.png")
         $(".skeleton").append($rightlegfound);
         $($rightleg).removeClass("clickable");
+        game.skeletonbox +=1;
+        if(game.skeletonbox === 6){
+          endPlayer1Round();
+          endPlayer2Round();
+        }
+        console.log(game);
       };
 
 //===========clicks============================//
@@ -107,7 +196,7 @@ $(() => {
         $(event.currentTarget).trigger('reset');
       });
     };
-    player1name();
+
     const player2name= () => {
       $('.player2form').on('submit', (event) => {
         player2sub = $("#player2sub").val();
@@ -117,6 +206,13 @@ $(() => {
 
       });
     };
+
+    // const currentPlayer = () => {
+    //
+    // }
+
+
+    player1name();
     player2name();
   }
 

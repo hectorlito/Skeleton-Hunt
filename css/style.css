@@ -62,17 +62,19 @@ h4{
 .gameboard {
   background-color: white;
   position: relative;
-  border: 1px solid gold;
+  border: 3px solid red;
   height:65%;
   width: 65%;
   margin: 100px 20px;
   overflow: hidden;
 }
 .player1{
-  color: white;
+  color: red;
+  font-size: 20px;
 }
 .player2{
-  color: white;
+  color: red;
+  font-size: 20px;
 }
 .titulo{
   background-color: black;
@@ -89,7 +91,7 @@ h4{
 .torso2{
   display: inline-block;
   width: 70px;
-  height: 50px;
+  height: 80px;
 }
 
 .leftarm2{
@@ -118,7 +120,7 @@ h4{
 
 
 .skull{
-  background: black;
+  /*background: black;*/
   position: relative;
   animation-name: box-step;
   animation-duration: 10s;
@@ -126,7 +128,7 @@ h4{
 }
 
 .torso{
-  background: black;
+  /*background: black;*/
   position: relative;
   animation-name: slide;
   animation-duration: 10s;
@@ -134,14 +136,14 @@ h4{
 }
 
 .leftarm{
-  background: black;
+  /*background: black;*/
   position: relative;
   animation-name: ping;
   animation-duration: 10s;
   animation-iteration-count: infinite;
 }
 .rightarm{
-  background: black;
+  /*background: black;*/
   position: relative;
   animation-name: fav;
   animation-duration: 10s;
@@ -149,14 +151,14 @@ h4{
 }
 
 .leftleg{
-  background: black;
+  /*background: black;*/
   position: relative;
   animation-name: rodeo;
   animation-duration: 10s;
   animation-iteration-count: infinite;
 }
 .rightleg{
-  background: black;
+  /*background: black;*/
   position: relative;
   animation-name: kicker;
   animation-duration: 10s;
@@ -165,81 +167,81 @@ h4{
 
 /*colors and movement*/
 @keyframes box-step {
-  0% {background: black; left:0%; top:0%;}
-  10% {background: black; }
-  25% {background: black; left: 75%; top:0px;}
-  30% {background:black;}
-  40% {background: lightyellow;}
-  50% {background: palegreen; left: 75%; top: 10em; }
-  60% {background: mediumaquamarine; }
-  75% {background: steelblue; left:0%; top:10em;}
-  80% {background: darkviolet;}
-  90% {background: black; }
-  100% {background: ghostwhite; left:0px; top:0px; }
+  0% {background: none; left:0%; top:0%;}
+  10% {background:  none; }
+  25% {background:  none; left: 75%; top:0px;}
+  30% {background: none;}
+  40% {background: none;}
+  50% {background: none; left: 75%; top: 10em; }
+  60% {background: none; }
+  75% {background: none; left:0%; top:10em;}
+  80% {background: none;}
+  90% {background: none; }
+  100% {background: none; left:0px; top:0px; }
 }
 
 @keyframes ping {
-  0% {background: red; left:0%; bottom: 0%;}
-  10% {background: red; }
-  25% {background: red; left: 55%; bottom:0%;}
-  30% {background: red;}
-  40% {background: red;}
-  50% {background: red; left: 0%; bottom: 10%; }
-  60% {background: red; }
-  75% {background: red;left:75%; top:10%;}
-  80% {background: red;}
-  90% {background: red; }
-  100% {background: red; left:0%; bottom:0%; }
+  0% {background: none; left:0%; bottom: 0%;}
+  10% {background: none; }
+  25% {background: none; left: 55%; bottom:0%;}
+  30% {background: none;}
+  40% {background: none;}
+  50% {background: none; left: 0%; bottom: 10%; }
+  60% {background: none; }
+  75% {background: none;left:75%; top:10%;}
+  80% {background: none;}
+  90% {background: none; }
+  100% {background: none; left:0%; bottom:0%; }
 }
 @keyframes slide {
-  0% {background: green; right:0%; bottom: 100px}
-  10% {background: green; }
-  25% {background: green; left: 0%; top:75px;}
-  30% {background: green;}
-  40% {background: green;}
-  50% {background: green; left: 75%; top: 10%; }
-  60% {background: green; }
-  75% {background: green; left:10%; top:20em;}
-  80% {background: green;}
-  90% {background: green; }
-  100% {background: green; left:0px; top:0px; }
+  0% {background: none; right:0%; bottom: 100px}
+  10% {background: none; }
+  25% {background: none; left: 0%; top:75px;}
+  30% {background: none;}
+  40% {background: none;}
+  50% {background: none; left: 75%; top: 10%; }
+  60% {background: none; }
+  75% {background: none; left:10%; top:20em;}
+  80% {background: none;}
+  90% {background: none; }
+  100% {background: none; left:0px; top:0px; }
 }
 @keyframes fav {
-  0% {background: yellow; right:0%; bottom: 0;}
-  10% {background: yellow; }
-  25% {background: yellow; right: 75%; bottom:0px;}
-  30% {background: yellow;}
-  40% {background: yellow;}
-  50% {background: yellow; right: 45%; bottom: 5em; }
-  60% {background: yellow; }
-  75% {background: yellow; right:0%; bottom:15em;}
-  80% {background: yellow;}
-  90% {background: yellow; }
-  100% {background: yellow; left:0px; top:0px; }
+  0% {background: none; right:0%; bottom: 0;}
+  10% {background: none; }
+  25% {background: none; right: 75%; bottom:0px;}
+  30% {background: none;}
+  40% {background: none;}
+  50% {background: none; right: 45%; bottom: 5em; }
+  60% {background: none; }
+  75% {background: none; right:0%; bottom:15em;}
+  80% {background: none;}
+  90% {background: none; }
+  100% {background: none; left:0px; top:0px; }
 }
 @keyframes rodeo {
   0% {background: none; left:0%; top: 0px}
-  10% {background: blue; }
-  25% {background: blue; left: 0%; top:75px;}
-  30% {background: blue;}
-  40% {background: blue;}
-  50% {background: blue; left: 75%; top: 10em; }
-  60% {background: blue; }
-  75% {background: blue; left:0%; top:10em;}
-  80% {background: blue;}
-  90% {background: blue; }
-  100% {background: blue; left:0px; top:0px; }
+  10% {background: none; }
+  25% {background: none; left: 0%; top:75px;}
+  30% {background: none;}
+  40% {background: none;}
+  50% {background: none; left: 75%; top: 10em; }
+  60% {background: none; }
+  75% {background: none; left:0%; top:10em;}
+  80% {background: none;}
+  90% {background: none; }
+  100% {background: none; left:0px; top:0px; }
 }
 @keyframes kicker {
-  0% {background: orange; right:100%; bottom: 100px}
-  10% {background: orange; }
-  25% {background: orange; left: 0%; top:75px;}
-  30% {background: orange;}
-  40% {background: orange;}
-  50% {background: orange; left: 75%; top: 10em; }
-  60% {background: orange; }
-  75% {background: orange; left:33%; top:12em;}
-  80% {background: orange;}
-  90% {background: orange; }
-  100% {background: orange; left:10px; top:5px; }
+  0% {background: none; right:100%; bottom: 100px}
+  10% {background: none; }
+  25% {background: none; left: 0%; top:75px;}
+  30% {background: none;}
+  40% {background: none;}
+  50% {background: none; left: 75%; top: 10em; }
+  60% {background: none; }
+  75% {background: none; left:33%; top:12em;}
+  80% {background: none;}
+  90% {background: none; }
+  100% {background: none; left:10px; top:5px; }
 }
