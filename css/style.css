@@ -90,29 +90,29 @@ h4{
 
 .torso2{
   display: inline-block;
-  width: 50px;
+  width: 70px;
   height: 50px;
 }
 
 .leftarm2{
   display: inline-block;
-  width: 70px;
-  height: 80px;
+  width: 100px;
+  height: 50px;
 }
 .rightarm2{
   display: inline-block;
-  width: 30px;
-  height: 30px;
+  width: 80px;
+  height: 90px;
 }
 .leftleg2{
   display: inline-block;
-  width: 72px;
-  height: 20px;
+  width: 65px;
+  height: 85px;
 }
 .rightleg2{
   display: inline-block;
-  width: 81px;
-  height: 41px;
+  width: 65px;
+  height: 85px;
 }
 
 
@@ -240,8 +240,8 @@ h4{
   40% {background: orange;}
   50% {background: orange; left: 75%; top: 10em; }
   60% {background: orange; }
-  75% {background: orange; left:0%; top:10em;}
+  75% {background: orange; left:33%; top:12em;}
   80% {background: orange;}
   90% {background: orange; }
-  100% {background: orange; left:0px; top:0px; }
+  100% {background: orange; left:10px; top:5px; }
 }
