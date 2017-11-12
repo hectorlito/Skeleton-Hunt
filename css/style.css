@@ -6,7 +6,7 @@ body{
   background-color: black;
   background-size: cover;
   background-repeat: no-repeat;
-  border: 3px solid red;
+  /*border: 3px solid red;*/
   z-index: 0;
   /*overflow: hidden;*/
 }
@@ -17,25 +17,14 @@ h4{
   display:inline-block;
 }
 
-.player1{
-  color: white;
-}
-.player2{
-  color: white;
-}
-.titulo{
-  background-color: black;
-  color:red;
-  text-align: center;
-}
 .skeleton-board-container{
   display:flex;
   height: 70%;
   width: 100%;
-    /*border: 10px solid pink;*/
+  /*border: 10px solid pink;*/
 }
 .container{
-    border: 1px solid gold;
+    /*border: 1px solid gold;*/
     position: relative;
     display: flex;
     flex-wrap: wrap;
@@ -49,9 +38,9 @@ h4{
   border: 10px solid red;
   position: relative;
   display: inline-block;
-  height: 40%;
-  width: 15%;
-  margin: 300px 20px 130px 150px;
+  height: 70%;
+  width: 25%;
+  margin: 95px 50px 130px 75px;
 }
 .buttons{
   background-color: red;
@@ -66,9 +55,7 @@ h4{
   display:block;
 }
 
-/*************************
-* General
-*************************/
+/*/=================General===============/*/
 
 
 
@@ -80,6 +67,17 @@ h4{
   width: 65%;
   margin: 100px 20px;
   overflow: hidden;
+}
+.player1{
+  color: white;
+}
+.player2{
+  color: white;
+}
+.titulo{
+  background-color: black;
+  color:red;
+  text-align: center;
 }
 
 .skull2{

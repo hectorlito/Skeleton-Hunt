@@ -71,31 +71,29 @@ $(() => {
         if ($($leftarm).hasClass("clickable")){
       console.log("left arm was clicked", );
       addleftarm();
-    }
+        }
       });
 
     $rightarm.on('click', () => {
         if ($($rightarm).hasClass("clickable")){
       console.log("right arm was clicked", );
       addrightarm();
-      }
+        }
       });
 
     $leftleg.on('click', () => {
       if ($($leftleg).hasClass("clickable")){
       console.log("leftlegwas clicked", );
       addleftleg();
-      }
+        }
       });
 
     $rightleg.on('click', () => {
       if ($($rightleg).hasClass("clickable")){
       console.log("rightleg was clicked", );
       addrightleg();
-      }
+        }
       });
-
-
 
     //=================PLAYER NAMES====================//
     let player1sub = $('<h3>');
@@ -110,7 +108,6 @@ $(() => {
       });
     };
     player1name();
-
     const player2name= () => {
       $('.player2form').on('submit', (event) => {
         player2sub = $("#player2sub").val();
@@ -120,9 +117,8 @@ $(() => {
 
       });
     };
-
     player2name();
-
   }
+
   startgame();
 })
