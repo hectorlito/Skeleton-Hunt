@@ -1,7 +1,7 @@
 console.log($);
 $(() => {
 
-  //Items are clickable
+  //========================Items are clickable
   const $skull = $('.skull2');
   const $torso = $('.torso2');
   const $leftarm = $('.leftarm2');
@@ -15,7 +15,7 @@ $(() => {
     player2time: '',
     skeletonbox: 0
   }
-  //startgame function
+  //===========================startgame function=======================
   const startgame= () => {
     $startbutton.on('click', () => {
       $skull.addClass('skull');
@@ -27,9 +27,8 @@ $(() => {
       const time = new Date()
       console.log(time);
       console.log(game);
-      //start player one round
     })
-
+//======================game functionality =============================//
     const endPlayer1Round= () => {
         $skull.removeClass('skull');
         $torso.removeClass('torso');
@@ -38,8 +37,10 @@ $(() => {
         $rightleg.removeClass('rightleg');
         $leftleg.removeClass('leftleg');
         const time = new Date();
-        player2round();
+        console.log(time);
+
         resetround();
+        player2round();
     }
 
     const player2round= () => {
@@ -51,6 +52,8 @@ $(() => {
         $rightleg.addClass('rightleg').addClass('clickable');
         $leftleg.addClass('leftleg').addClass('clickable');
         const time = new Date();
+        console.log(time);
+
       })
     }
 
@@ -62,11 +65,19 @@ $(() => {
       $rightleg.removeClass('rightleg');
       $leftleg.removeClass('leftleg');
       const time = new Date();
+      console.log(time);
+
+
     }
 
     const resetround= () => {
       $('.skeleton').empty();
       game.skeletonbox = 0;
+    }
+
+    const winner = () => {
+
+        if()
     }
 //============ADD AFTER CLICK==========================//
     const addskull = () => {
@@ -141,11 +152,10 @@ $(() => {
         console.log(game);
       };
 
-//===========clicks============================//
+//====================clicks============================//
 
     $skull.on('click', () => {
       if ($($skull).hasClass("clickable")){
-      console.log("skull was clicked", );
         addskull();
         }
       });
@@ -158,28 +168,24 @@ $(() => {
 
     $leftarm.on('click', () => {
         if ($($leftarm).hasClass("clickable")){
-      console.log("left arm was clicked", );
       addleftarm();
         }
       });
 
     $rightarm.on('click', () => {
         if ($($rightarm).hasClass("clickable")){
-      console.log("right arm was clicked", );
       addrightarm();
         }
       });
 
     $leftleg.on('click', () => {
       if ($($leftleg).hasClass("clickable")){
-      console.log("leftlegwas clicked", );
       addleftleg();
         }
       });
 
     $rightleg.on('click', () => {
       if ($($rightleg).hasClass("clickable")){
-      console.log("rightleg was clicked", );
       addrightleg();
         }
       });
@@ -215,6 +221,6 @@ $(() => {
     player1name();
     player2name();
   }
-
+    winner();
   startgame();
 })
