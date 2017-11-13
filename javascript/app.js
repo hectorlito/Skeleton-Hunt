@@ -10,12 +10,24 @@ $(() => {
   const $rightleg = $('.rightleg2');
   const $startbutton = $('.startbutton');
   const $fullSkeleton = $('.skeleton');
+  let player1start;
+  let player1end;
+  let player2start;
+  let player2end;
   const game = {
     player1time: '',
     player2time: '',
     skeletonbox: 0
   }
   //===========================startgame function=======================
+  const winner = () => {
+      if(player1end.getTime()-player1start.getTime() < player2end.getTime()-player2start.getTime()) {
+        console.log("player 1 wins!");
+        console.log(player1start.getTime());
+      }
+  }
+
+
   const startgame= () => {
     $startbutton.on('click', () => {
       $skull.addClass('skull');
@@ -24,9 +36,10 @@ $(() => {
       $rightarm.addClass('rightarm');
       $rightleg.addClass('rightleg');
       $leftleg.addClass('leftleg');
-      const time = new Date()
-      console.log(time);
+      player1start = new Date()
+      console.log(player1start);
       console.log(game);
+
     })
 //======================game functionality =============================//
     const endPlayer1Round= () => {
@@ -36,9 +49,8 @@ $(() => {
         $rightarm.removeClass('rightarm');
         $rightleg.removeClass('rightleg');
         $leftleg.removeClass('leftleg');
-        const time = new Date();
-        console.log(time);
-
+        player1end = new Date();
+        console.log(player1end);
         resetround();
         player2round();
     }
@@ -51,9 +63,8 @@ $(() => {
         $rightarm.addClass('rightarm').addClass('clickable');
         $rightleg.addClass('rightleg').addClass('clickable');
         $leftleg.addClass('leftleg').addClass('clickable');
-        const time = new Date();
-        console.log(time);
-
+        player2start = new Date();
+        console.log(player2start);
       })
     }
 
@@ -64,10 +75,8 @@ $(() => {
       $rightarm.removeClass('rightarm');
       $rightleg.removeClass('rightleg');
       $leftleg.removeClass('leftleg');
-      const time = new Date();
-      console.log(time);
-
-
+      player2end = new Date();
+      console.log(player2end);
     }
 
     const resetround= () => {
@@ -75,10 +84,6 @@ $(() => {
       game.skeletonbox = 0;
     }
 
-    const winner = () => {
-
-        if()
-    }
 //============ADD AFTER CLICK==========================//
     const addskull = () => {
       const $skullfound = $('<img>').addClass("skull2").attr("src", "/Users/hectorguevara/Desktop/dev/Skeleton-Hunt/images/skull.png")
