@@ -9,6 +9,7 @@ $(() => {
   const $leftleg = $('.leftleg2');
   const $rightleg = $('.rightleg2');
   const $startbutton = $('.startbutton');
+  const $startbutton2 = $('.startbutton2');
   const $fullSkeleton = $('.skeleton');
   let player1start;
   let player1end;
@@ -19,13 +20,14 @@ $(() => {
     player2time: '',
     skeletonbox: 0
   }
+  let Round1ended = false;
   //===========================startgame function=======================
-  const winner = () => {
-      if(player1end.getTime()-player1start.getTime() < player2end.getTime()-player2start.getTime()) {
-        console.log("player 1 wins!");
-        console.log(player1start.getTime());
-      }
-  }
+  // const winner = () => {
+  //     if(player1end.getTime()-player1start.getTime() < player2end.getTime()-player2start.getTime()) {
+  //       console.log("player 1 wins!");
+  //       console.log(player1start.getTime());
+  //     }
+  // }
 
 
   const startgame= () => {
@@ -36,9 +38,8 @@ $(() => {
       $rightarm.addClass('rightarm');
       $rightleg.addClass('rightleg');
       $leftleg.addClass('leftleg');
-      player1start = new Date()
-      console.log(player1start);
-      console.log(game);
+      player1start = new Date();
+      console.log("player 1 started");
 
     })
 //======================game functionality =============================//
@@ -51,12 +52,15 @@ $(() => {
         $leftleg.removeClass('leftleg');
         player1end = new Date();
         console.log(player1end);
+        console.log("player 1 ended");
+        Round1ended = true;
         resetround();
         player2round();
+        
     }
 
     const player2round= () => {
-      $startbutton.on('click', () => {
+      $startbutton2.on('click', () => {
         $skull.addClass('skull').addClass('clickable');
         $torso.addClass('torso').addClass('clickable');
         $leftarm.addClass('leftarm').addClass('clickable');
@@ -65,6 +69,7 @@ $(() => {
         $leftleg.addClass('leftleg').addClass('clickable');
         player2start = new Date();
         console.log(player2start);
+        console.log("player 2 started");
       })
     }
 
@@ -77,6 +82,8 @@ $(() => {
       $leftleg.removeClass('leftleg');
       player2end = new Date();
       console.log(player2end);
+      console.log("player 2 ended");
+
     }
 
     const resetround= () => {
@@ -84,17 +91,34 @@ $(() => {
       game.skeletonbox = 0;
     }
 
+    const winner = () => {
+      let firstplayertime = player1end.getTime() - player1start.getTime();
+      let secondplayertime = player2end.getTime() - player2start.getTime();
+      console.log(firstplayertime);
+      console.log(secondplayertime);
+        if(firstplayertime < secondplayertime) {
+          console.log("player 1 wins!");
+          console.log(player1start.getTime());
+        } else if (secondplayertime < firstplayertime) {
+          console.log("player 2 wins!");
+          console.log(player2start.getTime());
+        } else {
+          console.log("you tied you losers");
+        }
+      }
 //============ADD AFTER CLICK==========================//
     const addskull = () => {
       const $skullfound = $('<img>').addClass("skull2").attr("src", "/Users/hectorguevara/Desktop/dev/Skeleton-Hunt/images/skull.png")
         $(".skeleton").append($skullfound);
         $($skull).removeClass("clickable");
         game.skeletonbox +=1;
-        if(game.skeletonbox === 6){
+        if((game.skeletonbox === 6) && (!Round1ended)){
           endPlayer1Round();
+        } else if((game.skeletonbox === 6) && (Round1ended)){
           endPlayer2Round();
+          winner();
         }
-        console.log(game);
+        // console.log(game);
       }
 
       const addtorso = () => {
@@ -102,11 +126,13 @@ $(() => {
         $(".skeleton").append($torsofound);
         $($torso).removeClass("clickable");
         game.skeletonbox +=1;
-        if(game.skeletonbox === 6){
+        if((game.skeletonbox === 6) && (!Round1ended)){
           endPlayer1Round();
+        } else if((game.skeletonbox === 6) && (Round1ended)){
           endPlayer2Round();
+          winner();
         }
-        console.log(game);
+        // console.log(game);
       };
 
       const addleftarm = () => {
@@ -114,11 +140,13 @@ $(() => {
         $(".skeleton").append($leftarmfound);
         $($leftarm).removeClass("clickable");
         game.skeletonbox +=1;
-        if(game.skeletonbox === 6){
+        if((game.skeletonbox === 6) && (!Round1ended)){
           endPlayer1Round();
+        } else if((game.skeletonbox === 6) && (Round1ended)){
           endPlayer2Round();
+          winner();
         }
-        console.log(game);
+        // console.log(game);
       };
 
       const addrightarm = () => {
@@ -126,11 +154,13 @@ $(() => {
         $(".skeleton").append($rightarmfound);
         $($rightarm).removeClass("clickable");
         game.skeletonbox +=1;
-        if(game.skeletonbox === 6){
+        if((game.skeletonbox === 6) && (!Round1ended)){
           endPlayer1Round();
+        } else if((game.skeletonbox === 6) && (Round1ended)){
           endPlayer2Round();
+          winner();
         }
-        console.log(game);
+        // console.log(game);
       };
 
       const addleftleg = () => {
@@ -138,11 +168,13 @@ $(() => {
         $(".skeleton").append($leftlegfound);
         $($leftleg).removeClass("clickable");
         game.skeletonbox +=1;
-        if(game.skeletonbox === 6){
+        if((game.skeletonbox === 6) && (!Round1ended)){
           endPlayer1Round();
+        } else if((game.skeletonbox === 6) && (Round1ended)){
           endPlayer2Round();
+          winner();
         }
-        console.log(game);
+        // console.log(game);
       };
 
       const addrightleg = () => {
@@ -150,11 +182,13 @@ $(() => {
         $(".skeleton").append($rightlegfound);
         $($rightleg).removeClass("clickable");
         game.skeletonbox +=1;
-        if(game.skeletonbox === 6){
+        if((game.skeletonbox === 6) && (!Round1ended)){
           endPlayer1Round();
+        } else if((game.skeletonbox === 6) && (Round1ended)){
           endPlayer2Round();
+          winner();
         }
-        console.log(game);
+        // console.log(game);
       };
 
 //====================clicks============================//
@@ -226,6 +260,8 @@ $(() => {
     player1name();
     player2name();
   }
-    winner();
+
+
   startgame();
+
 })
