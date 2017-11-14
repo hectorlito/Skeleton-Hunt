@@ -35,7 +35,7 @@ h4{
 }
 .skeleton{
   background-color: black;
-  border: 10px solid red;
+  border: 10px solid orange;
   position: relative;
   display: inline-block;
   height: 70%;
@@ -43,7 +43,7 @@ h4{
   margin: 95px 50px 130px 75px;
 }
 .buttons{
-  background-color: red;
+  background-color: orange;
   color: black;
   bottom: 0;
   right: 50%;
@@ -52,7 +52,7 @@ h4{
   position: absolute;
 }
 .buttons2{
-  background-color: aqua;
+  background-color: orange;
   color: black;
   bottom: 0;
   right: 10%;
@@ -63,6 +63,9 @@ h4{
 .boxes{
   display:block;
 }
+.winnercircle{
+  color: white;
+}
 
 /*/=================General===============/*/
 
@@ -71,23 +74,23 @@ h4{
 .gameboard {
   background-color: white;
   position: relative;
-  border: 3px solid red;
+  border: 3px solid orange;
   height:65%;
   width: 65%;
   margin: 100px 20px;
   overflow: hidden;
 }
 .player1{
-  color: red;
+  color: orange;
   font-size: 20px;
 }
 .player2{
-  color: Aqua;
+  color: orange;
   font-size: 20px;
 }
 .titulo{
   background-color: black;
-  color:red;
+  color:orange;
   text-align: center;
 }
 

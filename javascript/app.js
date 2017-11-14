@@ -18,15 +18,14 @@ $(() => {
   const game = {
     player1time: '',
     player2time: '',
-    skeletonbox: 0
+    skeletonbox: 0,
+    roundWinners: []
   }
   let Round1ended = false;
   //===========================startgame function=======================
-  // const winner = () => {
-  //     if(player1end.getTime()-player1start.getTime() < player2end.getTime()-player2start.getTime()) {
-  //       console.log("player 1 wins!");
-  //       console.log(player1start.getTime());
-  //     }
+  // if(roundWinner.length === 3){
+  //   game over
+  // } else is (roundWinner.length == 2 && roundWinner[0]===roundWinner[1])
   // }
 
 
@@ -56,7 +55,7 @@ $(() => {
         Round1ended = true;
         resetround();
         player2round();
-        
+
     }
 
     const player2round= () => {
@@ -90,6 +89,17 @@ $(() => {
       $('.skeleton').empty();
       game.skeletonbox = 0;
     }
+//=========================WINNER CIRCLE===================
+    const player1win = () => {
+      let player1sub = $(".player1-name").text();
+      $(".winnercircle").append(player1sub + " WINS THE GAME!");
+    };
+
+
+    const player2win = () => {
+      let player2sub = $(".player2-name").text();
+      $(".winnercircle").append(player2sub + " WINS THE GAME!");
+    };
 
     const winner = () => {
       let firstplayertime = player1end.getTime() - player1start.getTime();
@@ -99,9 +109,11 @@ $(() => {
         if(firstplayertime < secondplayertime) {
           console.log("player 1 wins!");
           console.log(player1start.getTime());
+          player1win();
         } else if (secondplayertime < firstplayertime) {
           console.log("player 2 wins!");
           console.log(player2start.getTime());
+          player2win();
         } else {
           console.log("you tied you losers");
         }
@@ -118,7 +130,6 @@ $(() => {
           endPlayer2Round();
           winner();
         }
-        // console.log(game);
       }
 
       const addtorso = () => {
@@ -132,7 +143,6 @@ $(() => {
           endPlayer2Round();
           winner();
         }
-        // console.log(game);
       };
 
       const addleftarm = () => {
@@ -146,7 +156,6 @@ $(() => {
           endPlayer2Round();
           winner();
         }
-        // console.log(game);
       };
 
       const addrightarm = () => {
@@ -160,7 +169,6 @@ $(() => {
           endPlayer2Round();
           winner();
         }
-        // console.log(game);
       };
 
       const addleftleg = () => {
@@ -174,7 +182,6 @@ $(() => {
           endPlayer2Round();
           winner();
         }
-        // console.log(game);
       };
 
       const addrightleg = () => {
@@ -188,7 +195,6 @@ $(() => {
           endPlayer2Round();
           winner();
         }
-        // console.log(game);
       };
 
 //====================clicks============================//
@@ -230,32 +236,27 @@ $(() => {
       });
 
     //=================PLAYER NAMES====================//
-    let player1sub = $('<h3>');
-    let player2sub = $('<h3>');
+    // let player1sub = $('<h3>');
+    // let player2sub = $('<h3>');
 
     const player1name= () => {
       $('.player1form').on('submit', (event) => {
-        player1sub = $("#player1sub").val();
+      let player1sub = $("#player1sub").val();
         event.preventDefault();
-        $(".player1").append(player1sub)
+        $(".player1-name").append(player1sub)
         $(event.currentTarget).trigger('reset');
       });
     };
 
     const player2name= () => {
       $('.player2form').on('submit', (event) => {
-        player2sub = $("#player2sub").val();
+        let player2sub = $("#player2sub").val();
         event.preventDefault();
-        $(".player2").append(player2sub);
+        $(".player2-name").append(player2sub);
         $(event.currentTarget).trigger('reset');
 
       });
     };
-
-    // const currentPlayer = () => {
-    //
-    // }
-
 
     player1name();
     player2name();
