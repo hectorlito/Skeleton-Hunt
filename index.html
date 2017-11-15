@@ -14,8 +14,6 @@
   <link href="https://fonts.googleapis.com/css?family=Gloria+Hallelujah" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Creepster" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Mountains+of+Christmas" rel="stylesheet">
-
-
 </head>
 <body>
   <button button id='instructions' type="button">Instructions</button>
@@ -29,49 +27,47 @@
       <!-- all of the components flying around the game board -->
       <div class="skull2 clickable"><img class="skull2" src="images/skull.png"/></div>
       <div class="torso2 clickable">
+          <!-- gave this image a size by setting class equal to wrapper class. and overwriting default image size -->
+          <!-- two separate classes. one for the animation and the other for the look of the box. easier for me to read and understand where I am applying things. -->
         <img class="torso2" src="images/torso.png" alt="torso"/>
-        <!-- gave this image a size by setting class equal to wrapper class. and overwriting default image size -->
       </div>
       <div class="leftarm2 clickable">
         <img class="leftarm2" src="images/leftarm.png" alt="leftarm"/>
       </div>
       <div class="rightarm2 clickable">
         <img class="rightarm2" src="images/rightarm.png" alt="rightarm"/></div>
-      <div class="leftleg2 clickable">
-        <img class="leftleg2" src="images/leftleg.png" alt="leftleg"/>
+        <div class="leftleg2 clickable">
+          <img class="leftleg2" src="images/leftleg.png" alt="leftleg"/>
+        </div>
+        <div class="rightleg2 clickable">
+          <img class="rightleg2" src="images/rightleg.png" alt="rightleg"/>
+        </div>
       </div>
-      <div class="rightleg2 clickable">
-        <img class="rightleg2" src="images/rightleg.png" alt="rightleg"/>
-      </div>
+      <!-- ====================================================================================completed skeleton box and winner class ================================================================= -->
+      <div class="skeleton"></div>
     </div>
-    <!-- ========================================================================completed skeleton is   below=============================================================== -->
-    <div class="skeleton"></div>
-  </div>
     <div class="winnercircle"></div>
-  <!-- ============================================================================PLayer names location====================================== -->
-  <div class="player-names">
-    <div class="player1">
-      <h4>PLAYER 1</h4>
-      <span class="player1-name"></span>
+    <!-- =========PLayer names location=================== -->
+    <div class="player-names">
+      <div class="player1">
+        <h4>PLAYER 1</h4>
+        <!-- added span so that I am manipulating that and not the h4-->
+        <span class="player1-name"></span>
+      </div>
+      <div class="boxes">
+        <form class="player1form">
+          <input id="player1sub" class="boxes" type="text" name="name" value=""/>
+          <input type="submit"></button>
+        </form>
+      </div>
+      <div class="player2">
+        <h4>PLAYER 2</h4>
+        <span class="player2-name"></span>
+      </div>
     </div>
-    <div class="boxes">
-    <form class="player1form">
-      <input id="player1sub" class="boxes" type="text" name="name" value=""/>
-      <input type="submit"></button>
-    </form>
-  </div>
-    <div class="player2">
-      <h4>PLAYER 2</h4>
-      <span class="player2-name"></span>
-    </div>
-  </div>
-  <!-- buttons at bottom -->
-  <div class="container">
-    <div class="boxes">
-      <!-- <form class="player1form">
-        <input id="player1sub" class="boxes" type="text" name="name" value=""/>
-        <input type="submit"></button>
-      </form> -->
+    <!-- buttons at bottom -->
+    <div class="container">
+      <div class="boxes">
       <form class="player2form">
         <input id="player2sub" class="boxes" type="text" name="name" value=""/>
         <input type="submit"></button>
@@ -83,7 +79,6 @@
     <div class="startbutton2">
       <button class="buttons2" type="button">StartPlayer2</button>
     </div>
-    <!-- <div class="winnercircle"></div> -->
   </div>
 </body>
 </html>

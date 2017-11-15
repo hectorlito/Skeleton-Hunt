@@ -2,6 +2,10 @@ html, body{
   height: 99%;
   width: 100%;
 }
+/**{
+  border: red solid 1px;
+}*/
+/*========GENERAL===========*/
 body{
   background-color: black;
   background-size: cover;
@@ -16,14 +20,6 @@ h1{
 h4{
   display:inline-block;
 }
-
-/**{
-  border: red solid 1px;
-}*/
-.hide{
-  display: none;
-}
-
 .howToModal{
   padding: 5px;
   max-width: 700px;
@@ -31,7 +27,14 @@ h4{
   background: orange;
   display: none;
 }
-
+.titulo{
+  background-color: black;
+  font-size: 90px;
+  color:orange;
+  text-align: center;
+  font-family: 'Creepster', cursive;
+}
+/***************CONTAINERS*****************/
 .skeleton-board-container{
   display:flex;
   height: 50%;
@@ -39,14 +42,10 @@ h4{
   /*border: 10px solid pink;*/
 }
 .container{
-    /*border: 1px solid gold;*/
-    position: relative;
-    display: flex;
-    flex-wrap: wrap;
-}
-.player-names{
-  height:15%;
-  width: 100%;
+  /*border: 1px solid gold;*/
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
 }
 .skeleton{
   background-color: black;
@@ -58,12 +57,26 @@ h4{
   margin: 95px 50px 130px 75px;
   overflow: auto;
 }
+.gameboard {
+  background-color: white;
+  position: relative;
+  border: 3px solid orange;
+  height:65%;
+  width: 65%;
+  margin: 100px 20px;
+  overflow: hidden;
+}
+/*.player-names{
+  height:15%;
+  width: 100%;
+}*/
+/******************Bottom Half**********************/
 .buttons{
   background-color: orange;
   color: black;
   bottom: 0;
   right: 65%;
-  font-size: 30px;
+  font-size: 50px;
   display: inline;
   position: absolute;
   font-family: 'Mountains of Christmas', cursive;
@@ -73,7 +86,7 @@ h4{
   color: black;
   bottom: 0;
   right: 40%;
-  font-size: 30px;
+  font-size: 50px;
   display: inline;
   position: absolute;
   font-family: 'Mountains of Christmas', cursive;
@@ -89,19 +102,6 @@ h4{
   text-align: center;
   font-size: 33px;
   font-family: 'Creepster', cursive;
-
-}
-
-/*/=================General===============/*/
-
-.gameboard {
-  background-color: white;
-  position: relative;
-  border: 3px solid orange;
-  height:65%;
-  width: 65%;
-  margin: 100px 20px;
-  overflow: hidden;
 }
 .player1{
   color: orange;
@@ -111,14 +111,7 @@ h4{
   color: orange;
   font-size: 20px;
 }
-.titulo{
-  background-color: black;
-  font-size: 90px;
-  color:orange;
-  text-align: center;
-  font-family: 'Creepster', cursive;
-}
-
+/*=========Bones=============*/
 .skull2 {
   display: inline-block;
   width: 100px;
@@ -151,57 +144,48 @@ h4{
   width: 65px;
   height: 85px;
 }
-
+.hide{
+  display: none;
+}
 
 /*===================Animation===========================*/
-
-
 .skull{
-  /*background: black;*/
   position: relative;
   animation-name: box-step;
   animation-duration: 10s;
   animation-iteration-count: infinite;
 }
-
 .torso{
-  /*background: black;*/
   position: relative;
   animation-name: slide;
   animation-duration: 10s;
   animation-iteration-count: infinite;
 }
-
 .leftarm{
-  /*background: black;*/
   position: relative;
   animation-name: ping;
   animation-duration: 10s;
   animation-iteration-count: infinite;
 }
 .rightarm{
-  /*background: black;*/
   position: relative;
   animation-name: fav;
   animation-duration: 10s;
   animation-iteration-count: infinite;
 }
-
 .leftleg{
-  /*background: black;*/
   position: relative;
   animation-name: rodeo;
   animation-duration: 10s;
   animation-iteration-count: infinite;
 }
 .rightleg{
-  /*background: black;*/
   position: relative;
   animation-name: kicker;
   animation-duration: 10s;
   animation-iteration-count: infinite;
 }
-
+/*left colors in there for a little for troubleshooting beforehand*/
 /*colors and movement*/
 @keyframes box-step {
   0% {background: none; left:0%; top:0%;}

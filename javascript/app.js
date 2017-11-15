@@ -34,10 +34,8 @@ $(() => {
       $rightarm.addClass('rightarm');
       $rightleg.addClass('rightleg');
       $leftleg.addClass('leftleg');
-      player1start = new Date();
+      player1start = new Date();//this allows me to tell the time and then get the difference
       $startbutton.addClass('hide');
-      console.log("player 1 started");
-
     })
 //======================game functionality =============================//
     const endPlayer1Round= () => {
@@ -48,11 +46,8 @@ $(() => {
         $rightleg.removeClass('rightleg');
         $leftleg.removeClass('leftleg');
         player1end = new Date();
-        console.log(player1end);
-        console.log("player 1 ended");
         Round1ended = true;
         player2round();
-
     }
 
     const player2round= () => {
@@ -66,8 +61,6 @@ $(() => {
         $leftleg.addClass('leftleg');
         player2start = new Date();
         $startbutton2.addClass('hide');
-        console.log(player2start);
-        console.log("player 2 started");
       })
     }
 
@@ -79,8 +72,6 @@ $(() => {
       $rightleg.removeClass('rightleg');
       $leftleg.removeClass('leftleg');
       player2end = new Date();
-      console.log(player2end);
-      console.log("player 2 ended");
       resetround();
       roundWinner();
     }
@@ -95,26 +86,23 @@ $(() => {
       $rightleg.addClass('clickable');
       $leftleg.addClass('clickable');
     }
+
 //=========================WINNER CIRCLE===================
     const player1win = (time) => {
       let player1sub = $(".player1-name").text();
       if(player1sub === ''){
-        $(".winnercircle").append("Player 1 wins! ");
-        $('.winnercircle').append("Total time: ", time + " milliseconds");
+        $(".winnercircle").append("Player 1 wins! Total time: " , time + " milliseconds");
       } else {
-      $(".winnercircle").append(player1sub + " WINS THE GAME!");
+      $(".winnercircle").append(player1sub + " WINS THE GAME! ");
         $('.winnercircle').append("Total time: ", time + " milliseconds");
       }
     };
-
-
     const player2win = (time) => {
       let player2sub = $(".player2-name").text();
       if (player2sub === ''){
-        $(".winnercircle").append("Player 2 wins! ");
-        $('.winnercircle').append("Total time: ", time + " milliseconds");
+        $(".winnercircle").append("Player 2 wins! Total time: " , time + " milliseconds ");
       }else{
-      $(".winnercircle").append(player2sub + " WINS THE GAME!");
+      $(".winnercircle").append(player2sub + " WINS THE GAME! ");
         $('.winnercircle').append("Total time: ", time + " milliseconds");
       }
     };
@@ -122,10 +110,10 @@ $(() => {
     const roundWinner = () => {
       let firstplayertime = player1end.getTime() - player1start.getTime();
       let secondplayertime = player2end.getTime() - player2start.getTime();
-      console.log(firstplayertime);
-      console.log(secondplayertime);
+      //this give the results of the time//
         if(firstplayertime < secondplayertime) {
           game.roundWinners.push(player1sub);
+          //started working on making an array where I would be able to fidn three rounds//
           console.log("pushed to array", game.roundWinners);
           if(game.roundWinners.length === 3){
             gameOver();
@@ -153,6 +141,7 @@ $(() => {
         gameOver();
       } else if (game.roundWinners.length === 2 && game.roundWinners[0]=== game.roundWinners[1]){
       }
+
 //============ADD AFTER CLICK==========================//
     const addskull = () => {
       const $skullfound = $('<img>').addClass("skull2").attr("src", "images/skull.png")
@@ -163,7 +152,6 @@ $(() => {
           endPlayer1Round();
         } else if((game.skeletonbox === 6) && (Round1ended)){
           endPlayer2Round();
-          // roundWinner();
         }
       }
 
@@ -176,7 +164,6 @@ $(() => {
           endPlayer1Round();
         } else if((game.skeletonbox === 6) && (Round1ended)){
           endPlayer2Round();
-          // roundWinner();
         }
       };
 
@@ -189,7 +176,6 @@ $(() => {
           endPlayer1Round();
         } else if((game.skeletonbox === 6) && (Round1ended)){
           endPlayer2Round();
-          // roundWinner();
         }
       };
 
@@ -202,7 +188,6 @@ $(() => {
           endPlayer1Round();
         } else if((game.skeletonbox === 6) && (Round1ended)){
           endPlayer2Round();
-          // roundWinner();
         }
       };
 
@@ -232,7 +217,7 @@ $(() => {
         }
       };
 
-//====================clicks============================//
+//====================clickable class============================//
 
     $skull.on('click', () => {
       if ($($skull).hasClass("clickable")){
@@ -271,17 +256,12 @@ $(() => {
       });
 
     //=================Buttons====================//
-    // let player1sub = $('<h3>');
-    // let player2sub = $('<h3>');
-
     $instructions.on('click', () => {
       $('.howToModal').css('display', 'block')
     });
     $closeButton.on('click', () => {
       $('.howToModal').css('display', 'none')
     });
-
-
 
     const player1name= () => {
       $('.player1form').on('submit', (event) => {
@@ -298,15 +278,10 @@ $(() => {
         event.preventDefault();
         $(".player2-name").append(player2sub);
         $(event.currentTarget).trigger('reset');
-
       });
     };
-
     player1name();
     player2name();
   }
-
-
   startgame();
-
 })
