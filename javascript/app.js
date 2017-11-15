@@ -137,7 +137,7 @@ $(() => {
       }
 //============ADD AFTER CLICK==========================//
     const addskull = () => {
-      const $skullfound = $('<img>').addClass("skull2").attr("src", "/Users/hectorguevara/Desktop/dev/Skeleton-Hunt/images/skull.png")
+      const $skullfound = $('<img>').addClass("skull2").attr("src", "images/skull.png")
         $(".skeleton").append($skullfound);
         $($skull).removeClass("clickable");
         game.skeletonbox +=1;
@@ -150,7 +150,7 @@ $(() => {
       }
 
       const addtorso = () => {
-        const $torsofound = $('<img>').addClass("torso2").attr("src", "/Users/hectorguevara/Desktop/dev/Skeleton-Hunt/images/torso.png")
+        const $torsofound = $('<img>').addClass("torso2").attr("src", "images/torso.png")
         $(".skeleton").append($torsofound);
         $($torso).removeClass("clickable");
         game.skeletonbox +=1;
@@ -163,7 +163,7 @@ $(() => {
       };
 
       const addleftarm = () => {
-        const $leftarmfound = $('<img>').addClass("leftarm2").attr("src", "/Users/hectorguevara/Desktop/dev/Skeleton-Hunt/images/leftarm.png")
+        const $leftarmfound = $('<img>').addClass("leftarm2").attr("src", "images/leftarm.png")
         $(".skeleton").append($leftarmfound);
         $($leftarm).removeClass("clickable");
         game.skeletonbox +=1;
@@ -176,7 +176,7 @@ $(() => {
       };
 
       const addrightarm = () => {
-        const $rightarmfound = $('<img>').addClass("rightarm2").attr("src", "/Users/hectorguevara/Desktop/dev/Skeleton-Hunt/images/rightarm.png")
+        const $rightarmfound = $('<img>').addClass("rightarm2").attr("src", "images/rightarm.png")
         $(".skeleton").append($rightarmfound);
         $($rightarm).removeClass("clickable");
         game.skeletonbox +=1;
@@ -189,7 +189,7 @@ $(() => {
       };
 
       const addleftleg = () => {
-        const $leftlegfound = $('<img>').addClass("leftleg2").attr("src", "/Users/hectorguevara/Desktop/dev/Skeleton-Hunt/images/leftleg.png")
+        const $leftlegfound = $('<img>').addClass("leftleg2").attr("src", "images/leftleg.png")
         $(".skeleton").append($leftlegfound);
         $($leftleg).removeClass("clickable");
         game.skeletonbox +=1;
@@ -202,7 +202,7 @@ $(() => {
       };
 
       const addrightleg = () => {
-        const $rightlegfound = $('<img>').addClass("rightleg2").attr("src", "/Users/hectorguevara/Desktop/dev/Skeleton-Hunt/images/rightleg.png")
+        const $rightlegfound = $('<img>').addClass("rightleg2").attr("src", "images/rightleg.png")
         $(".skeleton").append($rightlegfound);
         $($rightleg).removeClass("clickable");
         game.skeletonbox +=1;
