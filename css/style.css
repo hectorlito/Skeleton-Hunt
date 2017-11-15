@@ -17,6 +17,15 @@ h4{
   display:inline-block;
 }
 
+
+.howToModal{
+  padding: 5px;
+  max-width: 700px;
+  margin: 1px auto 10px auto;
+  background: orange;
+  display: none;
+}
+
 .skeleton-board-container{
   display:flex;
   height: 70%;
@@ -35,10 +44,10 @@ h4{
 }
 .skeleton{
   background-color: black;
-  border: 10px solid orange;
+  border: 5px solid orange;
   position: relative;
   display: inline-block;
-  height: 70%;
+  height: 40%;
   width: 25%;
   margin: 95px 50px 130px 75px;
 }
@@ -63,13 +72,16 @@ h4{
 .boxes{
   display:block;
 }
+#player2sub{
+  margin: 15px 0;
+}
 .winnercircle{
-  color: white;
+  color: lime;
+  text-align: center;
+  font-size: 33px;
 }
 
 /*/=================General===============/*/
-
-
 
 .gameboard {
   background-color: white;
@@ -92,15 +104,16 @@ h4{
   background-color: black;
   color:orange;
   text-align: center;
+  font: comic;
 }
 
-.skull2{
+.skull2 {
   display: inline-block;
   width: 100px;
   height: 100px;
 }
 
-.torso2{
+.torso2 {
   display: inline-block;
   width: 70px;
   height: 80px;

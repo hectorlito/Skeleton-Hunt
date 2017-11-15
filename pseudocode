@@ -5,28 +5,33 @@ players will take turns
 one round each
 set on a timer
 
-10 hands(shots or chances)
 6 body parts
-40 seconds(this will vary...parameters set off the top of my head)
+60 seconds(this will vary...parameters set off the top of my head)
 
 OPENING PAGE
 players on screen...modal for rules and instructions on top left corner (modal...open and close..text inside)
 
-make a background 
+make a start button and class
+make player input fields...and make the input boxes disappear.
 
-
-
-
-
-tow big images of characters and then you enter your names
-...image divs....nothing to them. just photos of two cartoons
-name....an input box with submit on it. not a form so that it wont disappear ...just an input box that overtakes character..so you hit submit and then a function runs to make that disappear and just leave the actual text
-
+=======================================================================
 click start button(this will make everything clear  and open the next window)
-images will fade out. gameplay screen will fade in
+
 
 box on bottom for player name
 
 box on bottom for timer
 
 container on top left that has images running.
+
+if( $(event.currentTarget).hasClass('skull2')){
+const $skullfound = $('<img>').attr("src", "/Users/hectorguevara/Desktop/dev/Skeleton-Hunt/images/skull.png")
+  $(".skeleton").append($skullfound);
+  $($skull).removeClass("clickable")
+}
+else if ( $(event.currentTarget).hasClass('torso2')){
+  const $torsofound = $('<img>').attr("src", "/Users/hectorguevara/Desktop/dev/Skeleton-Hunt/images/torso.png")
+  $(".skeleton").append($torsofound);
+  $($torso).removeClass("clickable");
+}
+}

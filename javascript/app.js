@@ -11,6 +11,8 @@ $(() => {
   const $startbutton = $('.startbutton');
   const $startbutton2 = $('.startbutton2');
   const $fullSkeleton = $('.skeleton');
+  const $instructions = $('#instructions');
+  const $closeButton = $('#close');
   let player1start;
   let player1end;
   let player2start;
@@ -101,22 +103,37 @@ $(() => {
       $(".winnercircle").append(player2sub + " WINS THE GAME!");
     };
 
-    const winner = () => {
+    const roundWinner = () => {
       let firstplayertime = player1end.getTime() - player1start.getTime();
       let secondplayertime = player2end.getTime() - player2start.getTime();
       console.log(firstplayertime);
       console.log(secondplayertime);
         if(firstplayertime < secondplayertime) {
-          console.log("player 1 wins!");
-          console.log(player1start.getTime());
+          game.roundWinners.push(player1sub);
+          if(game.roundWinners.length === 3){
+            gameOver();
+          } else if (game.roundWinners.length === 2 && game.roundWinners[0]=== game.roundWinners[1]){
+          gameOver()};
           player1win();
         } else if (secondplayertime < firstplayertime) {
-          console.log("player 2 wins!");
-          console.log(player2start.getTime());
+          game.roundWinners.push(player2sub);
+          if(game.roundWinners.length === 3){
+            gameOver();
+          } else if (game.roundWinners.length === 2 && game.roundWinners[0]=== game.roundWinners[1]){
+          gameOver()};
           player2win();
         } else {
           console.log("you tied you losers");
         }
+      }
+
+      const gameOver = () => {
+        console.log("this function", gameOver);
+      }
+
+      if(game.roundWinners.length === 3){
+        gameOver();
+      } else if (game.roundWinners.length === 2 && game.roundWinners[0]=== game.roundWinners[1]){
       }
 //============ADD AFTER CLICK==========================//
     const addskull = () => {
@@ -128,7 +145,7 @@ $(() => {
           endPlayer1Round();
         } else if((game.skeletonbox === 6) && (Round1ended)){
           endPlayer2Round();
-          winner();
+          roundWinner();
         }
       }
 
@@ -141,7 +158,7 @@ $(() => {
           endPlayer1Round();
         } else if((game.skeletonbox === 6) && (Round1ended)){
           endPlayer2Round();
-          winner();
+          roundWinner();
         }
       };
 
@@ -154,7 +171,7 @@ $(() => {
           endPlayer1Round();
         } else if((game.skeletonbox === 6) && (Round1ended)){
           endPlayer2Round();
-          winner();
+          roundWinner();
         }
       };
 
@@ -167,7 +184,7 @@ $(() => {
           endPlayer1Round();
         } else if((game.skeletonbox === 6) && (Round1ended)){
           endPlayer2Round();
-          winner();
+          roundWinner();
         }
       };
 
@@ -180,7 +197,7 @@ $(() => {
           endPlayer1Round();
         } else if((game.skeletonbox === 6) && (Round1ended)){
           endPlayer2Round();
-          winner();
+          roundWinner();
         }
       };
 
@@ -193,7 +210,7 @@ $(() => {
           endPlayer1Round();
         } else if((game.skeletonbox === 6) && (Round1ended)){
           endPlayer2Round();
-          winner();
+          roundWinner();
         }
       };
 
@@ -235,9 +252,18 @@ $(() => {
         }
       });
 
-    //=================PLAYER NAMES====================//
+    //=================Buttons====================//
     // let player1sub = $('<h3>');
     // let player2sub = $('<h3>');
+
+    $instructions.on('click', () => {
+      $('.howToModal').css('display', 'block')
+    });
+    $closeButton.on('click', () => {
+      $('.howToModal').css('display', 'none')
+    });
+
+
 
     const player1name= () => {
       $('.player1form').on('submit', (event) => {
