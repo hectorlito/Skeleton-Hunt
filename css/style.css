@@ -17,6 +17,12 @@ h4{
   display:inline-block;
 }
 
+/**{
+  border: red solid 1px;
+}*/
+.hide{
+  display: none;
+}
 
 .howToModal{
   padding: 5px;
@@ -28,7 +34,7 @@ h4{
 
 .skeleton-board-container{
   display:flex;
-  height: 70%;
+  height: 50%;
   width: 100%;
   /*border: 10px solid pink;*/
 }
@@ -50,24 +56,29 @@ h4{
   height: 40%;
   width: 25%;
   margin: 95px 50px 130px 75px;
+  overflow: auto;
 }
 .buttons{
   background-color: orange;
   color: black;
   bottom: 0;
-  right: 50%;
+  right: 65%;
   font-size: 30px;
   display: inline;
   position: absolute;
+  font-family: 'Indie Flower', cursive;
+
 }
 .buttons2{
   background-color: orange;
   color: black;
   bottom: 0;
-  right: 10%;
+  right: 40%;
   font-size: 30px;
   display: inline;
   position: absolute;
+  font-family: 'Indie Flower', cursive;
+
 }
 .boxes{
   display:block;
@@ -76,9 +87,11 @@ h4{
   margin: 15px 0;
 }
 .winnercircle{
-  color: lime;
+  color: red;
   text-align: center;
   font-size: 33px;
+  font-family: 'Creepster', cursive;
+
 }
 
 /*/=================General===============/*/
@@ -102,9 +115,10 @@ h4{
 }
 .titulo{
   background-color: black;
+  font-size: 90px;
   color:orange;
   text-align: center;
-  font: comic;
+  font-family: 'Creepster', cursive;
 }
 
 .skull2 {

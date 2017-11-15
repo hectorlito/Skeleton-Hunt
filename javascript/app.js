@@ -1,7 +1,7 @@
 console.log($);
 $(() => {
 
-  //========================Items are clickable
+  //=============Items are clickable======================
   const $skull = $('.skull2');
   const $torso = $('.torso2');
   const $leftarm = $('.leftarm2');
@@ -25,14 +25,9 @@ $(() => {
   }
   let Round1ended = false;
   //===========================startgame function=======================
-  // if(roundWinner.length === 3){
-  //   game over
-  // } else is (roundWinner.length == 2 && roundWinner[0]===roundWinner[1])
-  // }
-
-
   const startgame= () => {
     $startbutton.on('click', () => {
+      resetround();
       $skull.addClass('skull');
       $torso.addClass('torso');
       $leftarm.addClass('leftarm');
@@ -40,6 +35,7 @@ $(() => {
       $rightleg.addClass('rightleg');
       $leftleg.addClass('leftleg');
       player1start = new Date();
+      $startbutton.addClass('hide');
       console.log("player 1 started");
 
     })
@@ -55,20 +51,21 @@ $(() => {
         console.log(player1end);
         console.log("player 1 ended");
         Round1ended = true;
-        resetround();
         player2round();
 
     }
 
     const player2round= () => {
       $startbutton2.on('click', () => {
-        $skull.addClass('skull').addClass('clickable');
-        $torso.addClass('torso').addClass('clickable');
-        $leftarm.addClass('leftarm').addClass('clickable');
-        $rightarm.addClass('rightarm').addClass('clickable');
-        $rightleg.addClass('rightleg').addClass('clickable');
-        $leftleg.addClass('leftleg').addClass('clickable');
+        resetround();
+        $skull.addClass('skull');
+        $torso.addClass('torso');
+        $leftarm.addClass('leftarm');
+        $rightarm.addClass('rightarm');
+        $rightleg.addClass('rightleg');
+        $leftleg.addClass('leftleg');
         player2start = new Date();
+        $startbutton2.addClass('hide');
         console.log(player2start);
         console.log("player 2 started");
       })
@@ -84,23 +81,42 @@ $(() => {
       player2end = new Date();
       console.log(player2end);
       console.log("player 2 ended");
-
+      resetround();
+      roundWinner();
     }
 
     const resetround= () => {
       $('.skeleton').empty();
       game.skeletonbox = 0;
+      $skull.addClass('clickable');
+      $torso.addClass('clickable');
+      $leftarm.addClass('clickable');
+      $rightarm.addClass('clickable');
+      $rightleg.addClass('clickable');
+      $leftleg.addClass('clickable');
     }
 //=========================WINNER CIRCLE===================
-    const player1win = () => {
+    const player1win = (time) => {
       let player1sub = $(".player1-name").text();
+      if(player1sub === ''){
+        $(".winnercircle").append("Player 1 wins! ");
+        $('.winnercircle').append("Total time: ", time + " milliseconds");
+      } else {
       $(".winnercircle").append(player1sub + " WINS THE GAME!");
+        $('.winnercircle').append("Total time: ", time + " milliseconds");
+      }
     };
 
 
-    const player2win = () => {
+    const player2win = (time) => {
       let player2sub = $(".player2-name").text();
+      if (player2sub === ''){
+        $(".winnercircle").append("Player 2 wins! ");
+        $('.winnercircle').append("Total time: ", time + " milliseconds");
+      }else{
       $(".winnercircle").append(player2sub + " WINS THE GAME!");
+        $('.winnercircle').append("Total time: ", time + " milliseconds");
+      }
     };
 
     const roundWinner = () => {
@@ -110,18 +126,20 @@ $(() => {
       console.log(secondplayertime);
         if(firstplayertime < secondplayertime) {
           game.roundWinners.push(player1sub);
+          console.log("pushed to array", game.roundWinners);
           if(game.roundWinners.length === 3){
             gameOver();
           } else if (game.roundWinners.length === 2 && game.roundWinners[0]=== game.roundWinners[1]){
           gameOver()};
-          player1win();
+          player1win(firstplayertime);
         } else if (secondplayertime < firstplayertime) {
           game.roundWinners.push(player2sub);
+          console.log("pushed to array", game.roundWinners)
           if(game.roundWinners.length === 3){
             gameOver();
           } else if (game.roundWinners.length === 2 && game.roundWinners[0]=== game.roundWinners[1]){
           gameOver()};
-          player2win();
+          player2win(secondplayertime);
         } else {
           console.log("you tied you losers");
         }
@@ -145,7 +163,7 @@ $(() => {
           endPlayer1Round();
         } else if((game.skeletonbox === 6) && (Round1ended)){
           endPlayer2Round();
-          roundWinner();
+          // roundWinner();
         }
       }
 
@@ -158,7 +176,7 @@ $(() => {
           endPlayer1Round();
         } else if((game.skeletonbox === 6) && (Round1ended)){
           endPlayer2Round();
-          roundWinner();
+          // roundWinner();
         }
       };
 
@@ -171,7 +189,7 @@ $(() => {
           endPlayer1Round();
         } else if((game.skeletonbox === 6) && (Round1ended)){
           endPlayer2Round();
-          roundWinner();
+          // roundWinner();
         }
       };
 
@@ -184,7 +202,7 @@ $(() => {
           endPlayer1Round();
         } else if((game.skeletonbox === 6) && (Round1ended)){
           endPlayer2Round();
-          roundWinner();
+          // roundWinner();
         }
       };
 
@@ -197,7 +215,7 @@ $(() => {
           endPlayer1Round();
         } else if((game.skeletonbox === 6) && (Round1ended)){
           endPlayer2Round();
-          roundWinner();
+          // roundWinner();
         }
       };
 
@@ -210,7 +228,7 @@ $(() => {
           endPlayer1Round();
         } else if((game.skeletonbox === 6) && (Round1ended)){
           endPlayer2Round();
-          roundWinner();
+          // roundWinner();
         }
       };
 
