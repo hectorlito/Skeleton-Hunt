@@ -51,7 +51,7 @@ h4{
 /***************CONTAINERS*****************/
 .skeleton-board-container{
   display:flex;
-  height: 80%;
+  height: 50%;
   width: 100%;
   /*border: 10px solid pink;*/
 }
@@ -68,16 +68,16 @@ h4{
   display: inline-block;
   height: 40%;
   width: 25%;
-  margin: 95px 50px 130px 75px;
+  margin: 95px 50px 100px 75px;
   overflow: auto;
 }
 .gameboard {
   background-color: white;
   position: relative;
   border: 3px solid orange;
-  height:65%;
+  height:70%;
   width: 65%;
-  margin: 100px 20px;
+  margin: 75px 20px;
   overflow: hidden;
 }
 /*.player-names{
