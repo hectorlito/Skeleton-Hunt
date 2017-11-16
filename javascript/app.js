@@ -75,6 +75,8 @@ $(() => {
       player2end = new Date();
       // resetround();
       roundWinner();
+      $('.skeleton').addClass('hide');
+      // $('.gameboard').addClass('hide');
     }
 
     const resetround= () => {
