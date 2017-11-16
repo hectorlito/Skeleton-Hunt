@@ -7,13 +7,25 @@ html, body{
 }*/
 /*========GENERAL===========*/
 body{
-  background-color: black;
-  background-size: cover;
-  background-repeat: no-repeat;
+  /*background-color: black;*/
+  /*background-size: cover;
+  background-repeat: no-repeat;*/
   /*border: 3px solid red;*/
-  z-index: 0;
+  /*z-index: 0;*/
   /*overflow: hidden;*/
+margin: 0; /*Body margins allow content to cover full screen*/
+padding: 0;
+height: 100%;
+width: 100%;
+background: gray url('https://s-media-cache-ak0.pinimg.com/originals/ff/86/13/ff8613e0866bf37dacbb255cd9509b26.jpg') repeat 0 0;
+animation: backgroundSlide 25s linear infinite;
 }
+
+@keyframes backgroundSlide {
+0% { background-position: 0 0; }
+100% { background-position: -400px 0; }
+} /*infinite translating image */
+
 h1{
   text-align: center;
 }
@@ -28,7 +40,7 @@ h4{
   display: none;
 }
 .titulo{
-  background-color: black;
+  background-color: none;
   font-size: 90px;
   color:orange;
   text-align: center;
@@ -48,7 +60,7 @@ h4{
   flex-wrap: wrap;
 }
 .skeleton{
-  background-color: black;
+  background-color: white;
   border: 5px solid orange;
   position: relative;
   display: inline-block;
@@ -98,18 +110,21 @@ h4{
   margin: 15px 0;
 }
 .winnercircle{
-  color: red;
+  background-color: black;
+  color: orange;
   text-align: center;
-  font-size: 33px;
+  font-size: 57px;
   font-family: 'Creepster', cursive;
 }
 .player1{
   color: orange;
   font-size: 20px;
+  font-family: 'Mountains of Christmas', cursive;
 }
 .player2{
   color: orange;
   font-size: 20px;
+  font-family: 'Mountains of Christmas', cursive;
 }
 /*=========Bones=============*/
 .skull2 {
