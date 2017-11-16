@@ -38,6 +38,8 @@ h4{
   margin: 1px auto 10px auto;
   background: orange;
   display: none;
+  font-family: 'Lora', serif;
+
 }
 .titulo{
   background-color: none;
@@ -49,7 +51,7 @@ h4{
 /***************CONTAINERS*****************/
 .skeleton-board-container{
   display:flex;
-  height: 50%;
+  height: 80%;
   width: 100%;
   /*border: 10px solid pink;*/
 }

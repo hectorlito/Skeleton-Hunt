@@ -71,8 +71,9 @@ $(() => {
       $rightarm.removeClass('rightarm');
       $rightleg.removeClass('rightleg');
       $leftleg.removeClass('leftleg');
-      player2end = new Date();
       resetround();
+      player2end = new Date();
+      // resetround();
       roundWinner();
     }
 
@@ -91,25 +92,25 @@ $(() => {
     const player1win = (time) => {
       let player1sub = $(".player1-name").text();
       if(player1sub === ''){
-        $(".winnercircle").append("Player 1 wins! Total time: " , time + " milliseconds");
+        $(".winnercircle").append("Player 1 wins! Total time: " , time + " Seconds");
       } else {
       $(".winnercircle").append(player1sub + " WINS THE GAME! ");
-        $('.winnercircle').append("Total time: ", time + " milliseconds");
+        $('.winnercircle').append("Total time: ", time + " Seconds");
       }
     };
     const player2win = (time) => {
       let player2sub = $(".player2-name").text();
       if (player2sub === ''){
-        $(".winnercircle").append("Player 2 wins! Total time: " , time + " milliseconds ");
+        $(".winnercircle").append("Player 2 wins! Total time: " , time + " Seconds ");
       }else{
       $(".winnercircle").append(player2sub + " WINS THE GAME! ");
-        $('.winnercircle').append("Total time: ", time + " milliseconds");
+        $('.winnercircle').append("Total time: ", time + " Seconds");
       }
     };
 
     const roundWinner = () => {
-      let firstplayertime = player1end.getTime() - player1start.getTime();
-      let secondplayertime = player2end.getTime() - player2start.getTime();
+      let firstplayertime = ((player1end.getTime() - player1start.getTime())/1000);
+      let secondplayertime = ((player2end.getTime() - player2start.getTime())/1000);
       //this give the results of the time//
         if(firstplayertime < secondplayertime) {
           game.roundWinners.push(player1sub);
